@@ -18,7 +18,7 @@ We can simply launch attacks against trained organizations and see how they reac
 attack. (Of course, when applicable)
 
 Resources:
-https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript
-https://mailchimp.com/developer/guides/marketing-api-conventions/
-https://hackersandslackers.com/making-ajax-calls-with-jquery/
-https://www.itgovernance.eu/blog/en/the-5-most-common-types-of-phishing-attack
+- https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript
+- https://mailchimp.com/developer/guides/marketing-api-conventions/
+- https://hackersandslackers.com/making-ajax-calls-with-jquery/
+- https://www.itgovernance.eu/blog/en/the-5-most-common-types-of-phishing-attack
