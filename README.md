@@ -16,3 +16,6 @@ aware and careful of the phishing attacks.
 4. What’s you evaluation plan (when applicable)?
 We can simply launch attacks against trained organizations and see how they react to the
 attack. (Of course, when applicable)
+
+Resources:
+https://hackersandslackers.com/making-ajax-calls-with-jquery/
