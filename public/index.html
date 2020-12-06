@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="w3-cell w3-cell-top w3-card-4" style="width:60%">
+        <header class="w3-container w3-blue">
+            <h1>Anti-Phishing Trainer</h1>
+        </header>
+        <div class="w3-container">
+            <ol>
+                <li>
+                    What are you trying to do?
+                    <p>
+                        I’m planning to develop a program that organizations can use to train their employee against
+                        phishing attacks. Due to my current skills, I don’t think I should try to come up with the
+                        top-tier
+                        cybersecurity software, but rather a software that is not too complicated and will be useful to
+                        people.
+                    </p>
+
+                <li>
+                    How is it done today, and what are the limits of current practice?
+                    <p>
+                        Currently organizations use anti-phishing software, the software can detect and block
+                        suspicious content. The limitation is that the software just simply can’t detect 100% of
+                        phishing
+                        attacks.
+                    </p>
+                </li>
+                <li>
+                    What is new in your approach?
+                    <p>
+                        Rather than building software to detect the attacks, I’m building software to trains users to be
+                        aware and careful of the phishing attacks.
+                    </p>
+                </li>
+
+                <li>What’s you evaluation plan (when applicable)?
+                    <p>
+                        We can simply launch attacks against trained organizations and see how they react to the
+                        attack. (Of course, when applicable)
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="w3-cell w3-cell-top w3-card-4" style="width:60%">
+        <header class="w3-container w3-blue">
+            <h1>Email Dispatch</h1>
+        </header>
+
+        <div class="w3-container">
+            <h3>Select a phishing method:</h3>
+            <ol>
+                <li>
+                    <button id="email">Email phishing</button>
+                </li>
+                <li>
+                    <button id="spear">Spear phishing</button>
+                </li>
+                <li>
+                    <button id="whale">Whale phishing</button>
+                </li>
+                <li>
+                    <button id="smish">Smishing and vishing</button>
+                </li>
+                <li>
+                    <button id="angler">Angler phishing</button>
+                </li>
+            </ol>
+        </div>
+
+        <div class="w3-container">
+            <form>
+                <label for="gen">Generated Email:</label><br>
+                <textarea rows="7" id="generatedEmail" tabindex="8" class="outtext" readonly=""></textarea><br>
+                <label for="sendAddress">Email Recipients:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="submit" value="Submit"><br>
+            </form>
+            <hr>
+
+        </div>
+
+    </div>
+
+    </div>
+</body>
+
+</html>
