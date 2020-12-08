@@ -1,4 +1,5 @@
 window.onload = function () {
+    // helper for generating company info
     var emailSamples = {
         companies: ["Apple", "YouTube", "PayPal", "Netflix", "Hulu", "Spotify"],
     };
@@ -28,9 +29,6 @@ window.onload = function () {
         "<h1>VIVA</h1><p>Dear Viva customer,<br><br>This email is to inform you of a recent update we made to our systems,<br>To avoid service interruption we require that you confirm your account as soon as possible.<br><br>Please take a moment to confirm your account by going to the following address:<br><br><a href=\"www.google.com\"><h2> Viva</h2></a></p>"
     ]
 
-    // helper for generating company info
-
-
     // helper function to make a string of current date
     function getDate() {
         var d = new Date();
@@ -57,7 +55,7 @@ window.onload = function () {
         var recipientsList = recipients.split(" ");
         recipientsList.forEach(item => {
             Email.send({
-                SecureToken: "6ca1ac5d-a4af-44e3-8725-53371ef5ff89",
+                SecureToken: "81f4e12d-57ee-4327-9232-c43697819b41",
                 To: item,
                 From: "antiphishing0@gmail.com",
                 Subject: "Dear " + item.substr(0, item.indexOf('@')),
