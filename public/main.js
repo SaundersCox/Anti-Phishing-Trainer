@@ -1,10 +1,6 @@
 window.onload = function () {
 
-    var emailSamples = {
-        companies: ["Apple", "YouTube", "PayPal", "Netflix", "Hulu", "Spotify"],
-        greetings: ["Dear valued customer,", ""]
-    };
-
+    // email templates to create the generated email
     var emailTemplate = [
         "To view a copy of this email in the cloud, go to the following address<br>" +
         "<a href=\"www.google.com\" > <h4>link here</h4></a >",
@@ -28,53 +24,30 @@ window.onload = function () {
 
         "<h1>VIVA</h1><p>Dear Viva customer,<br><br>This email is to inform you of a recent update we made to our systems,<br>To avoid service interruption we require that you confirm your account as soon as possible.<br><br>Please take a moment to confirm your account by going to the following address:<br><br><a href=\"www.google.com\"><h2> Viva</h2></a></p>"
     ]
+
+    // helper for generating company info
+    var emailSamples = {
+        companies: ["Apple", "YouTube", "PayPal", "Netflix", "Hulu", "Spotify"],
+    };
+
+    // helper function to make a string of current date
     function getDate() {
         var d = new Date();
         return d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
     }
 
-    var addy = "saunderscox@gmail.com";
-    var streetaddress = addy.substr(0, addy.indexOf('@'));
-    console.log(streetaddress);
-
-
-    // generating email message, based on user choice
-    var generated = "";
-
-
+    // instructs the specified email to be generated
     document.getElementById('email').onclick = function () {
-        document.getElementById("generatedEmail").value = emailTemplate[randThree()];
+        document.getElementById("generatedEmail").value = emailTemplate[Math.floor(Math.random() * 3)];
     };
 
     document.getElementById('spear').onclick = function () {
-        document.getElementById("generatedEmail").value = spearTemplate[randThree()];
+        document.getElementById("generatedEmail").value = spearTemplate[Math.floor(Math.random() * 3)];
     };
 
     document.getElementById('whale').onclick = function () {
-        document.getElementById("generatedEmail").value = whaleTemplate[randThree()];
+        document.getElementById("generatedEmail").value = whaleTemplate[Math.floor(Math.random() * 3)];
     };
-
-    function randThree() {
-        return Math.floor(Math.random() * 3);
-    }
-
-    var emailText = "";
-    var spearText = "";
-    var whaleText = "";
-
-
-    // document.getElementById('smish').onclick = function() {
-    //     document.getElementById("generatedEmail").value = "IDK3";
-    //     generated = "IDK3"
-    //     console.log(generated)
-    // };
-
-    // document.getElementById('angler').onclick = function() {
-    //     document.getElementById("generatedEmail").value = "IDK4";
-    //     generated = "IDK4"
-    //     console.log(generated)
-    // };
-
 
     // sending an email to recipients, based on user list of recipients emails 
     document.getElementById('sub').onclick = function () {
@@ -86,7 +59,7 @@ window.onload = function () {
                 SecureToken: "6ca1ac5d-a4af-44e3-8725-53371ef5ff89",
                 To: item,
                 From: "antiphishing0@gmail.com",
-                Subject: "Dear " + addy,
+                Subject: "Dear " + addy.substr(0, addy.indexOf('@')),
                 Body: document.getElementById("generatedEmail").value + "<br><em><span class=\"small\">Brought to you by AntiPhishing Trainer</span></em>"
             }).then(
                 message => alert(message)
