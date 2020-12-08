@@ -1,4 +1,7 @@
 window.onload = function () {
+    var emailSamples = {
+        companies: ["Apple", "YouTube", "PayPal", "Netflix", "Hulu", "Spotify"],
+    };
 
     // email templates to create the generated email
     var emailTemplate = [
@@ -26,9 +29,7 @@ window.onload = function () {
     ]
 
     // helper for generating company info
-    var emailSamples = {
-        companies: ["Apple", "YouTube", "PayPal", "Netflix", "Hulu", "Spotify"],
-    };
+
 
     // helper function to make a string of current date
     function getDate() {
@@ -59,7 +60,7 @@ window.onload = function () {
                 SecureToken: "6ca1ac5d-a4af-44e3-8725-53371ef5ff89",
                 To: item,
                 From: "antiphishing0@gmail.com",
-                Subject: "Dear " + addy.substr(0, addy.indexOf('@')),
+                Subject: "Dear " + item.substr(0, item.indexOf('@')),
                 Body: document.getElementById("generatedEmail").value + "<br><em><span class=\"small\">Brought to you by AntiPhishing Trainer</span></em>"
             }).then(
                 message => alert(message)
