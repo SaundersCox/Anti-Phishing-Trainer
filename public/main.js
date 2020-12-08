@@ -1,13 +1,9 @@
 var prefix = 'https://us2.admin.mailchimp.com/';
 
-// DC:
-// us2
 
-// API Key:
-// 08891e19fd877ddebd37007afa5345d8-us2
 
 // Antiphishing0
-// asdASD123!@#
+// 
 
 
 $(document).ready(function () {
@@ -28,7 +24,10 @@ $(document).ready(function () {
     });
 
     let endpoint = 'https://api.linkpreview.net'
-    let apiKey = '08891e19fd877ddebd37007afa5345d8-us2'
+    let apiKey = '79947b122cdc62890074e0b0fc7f033a-us2'
+
+    console.log('hello');
+    console.log(process.env.API_KEY);
 
     $(".content a").each(function (index, element) {
 
@@ -43,7 +42,7 @@ $(document).ready(function () {
     });
 });
 
-var mandrill = require('node-mandrill')('08891e19fd877ddebd37007afa5345d8-us2');
+var mandrill = require('node-mandrill')(apiKey);
 
 function sendEmail(_name, _email, _subject, _message) {
     mandrill('/messages/send', {
