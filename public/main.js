@@ -1,75 +1,59 @@
-var prefix = 'https://us2.admin.mailchimp.com/';
+
+window.onload = function(){
+
+    // generating email message, based on user choice
+    var generated = "";
+
+    document.getElementById('email').onclick = function() {
+        document.getElementById("generatedEmail").value = "IDK0";
+        generated = "IDK0"
+        console.log(generated)
+    };
+
+    document.getElementById('spear').onclick = function() {
+        document.getElementById("generatedEmail").value = "IDK1";
+        generated = "IDK1"
+        console.log(generated)
+    };
+
+    document.getElementById('whale').onclick = function() {
+        document.getElementById("generatedEmail").value = "IDK2";
+        generated = "IDK2"
+        console.log(generated)
+    };
+
+    // document.getElementById('smish').onclick = function() {
+    //     document.getElementById("generatedEmail").value = "IDK3";
+    //     generated = "IDK3"
+    //     console.log(generated)
+    // };
+
+    // document.getElementById('angler').onclick = function() {
+    //     document.getElementById("generatedEmail").value = "IDK4";
+    //     generated = "IDK4"
+    //     console.log(generated)
+    // };
 
 
+    // sending an email to recipients, based on user list of recipients emails 
+    document.getElementById('sub').onclick = function() {             
+        var recipients = document.getElementById("lname").value;
+        // console.log(recipients);
+        var recipientsList = recipients.split(" ");
+        recipientsList.forEach(item => {
+            Email.send({
+                SecureToken : "6ca1ac5d-a4af-44e3-8725-53371ef5ff89",
+                To : item,
+                From : "antiphishing0@gmail.com",
+                Subject : "I'm your BOSS!",
+                Body : "give me your stuff, just to verify stuff"
+            }).then(
+              message => alert(message)
+            );
+        });
 
-// Antiphishing0
-// 
+    };
 
-
-$(document).ready(function () {
-    $("#email").click(function () {
-        $("#generatedEmail").text("Email Phishing");
-    });
-    $("#spear").click(function () {
-        $("#generatedEmail").text("Spear Phishing");
-    });
-    $("#whale").click(function () {
-        $("#generatedEmail").text("Whale Phishing");
-    });
-    $("#smish").click(function () {
-        $("#generatedEmail").text("Smishing and Vishing");
-    });
-    $("#angler").click(function () {
-        $("#generatedEmail").text("Angler Phishing");
-    });
-
-    let endpoint = 'https://api.linkpreview.net'
-    let apiKey = '79947b122cdc62890074e0b0fc7f033a-us2'
-
-    console.log('hello');
-    console.log(process.env.API_KEY);
-
-    $(".content a").each(function (index, element) {
-
-        $.ajax({
-            url: endpoint + "?key=" + apiKey + " &q=" + $(this).text(),
-            contentType: "application/json",
-            dataType: 'json',
-            success: function (result) {
-                console.log(result);
-            }
-        })
-    });
-});
-
-var mandrill = require('node-mandrill')(apiKey);
-
-function sendEmail(_name, _email, _subject, _message) {
-    mandrill('/messages/send', {
-        message: {
-            to: [{ email: _email, name: _name }],
-            from_email: 'noreply@yourdomain.com',
-            subject: _subject,
-            text: _message
-        }
-    }, function (error, response) {
-        if (error) console.log(error);
-        else console.log(response);
-    });
 }
 
-// define your own email api which points to your server.
-
-app.post('/api/sendemail/', function (req, res) {
-
-    var _name = req.body.name;
-    var _email = req.body.email;
-    var _subject = req.body.subject;
-    var _messsage = req.body.message;
-
-    //implement your spam protection or checks. 
-
-    sendEmail(_name, _email, _subject, _message);
-
-});
 

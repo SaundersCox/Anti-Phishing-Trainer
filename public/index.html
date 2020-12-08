@@ -9,9 +9,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="w3.css">
-    <link rel="stylesheet" href="main.css">
+    <!-- <link rel="stylesheet" href="main.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
@@ -74,12 +75,12 @@
                 <li>
                     <button id="whale">Whale phishing</button>
                 </li>
-                <li>
+                <!-- <li>
                     <button id="smish">Smishing and vishing</button>
                 </li>
                 <li>
                     <button id="angler">Angler phishing</button>
-                </li>
+                </li> -->
             </ol>
         </div>
 
@@ -89,8 +90,8 @@
                 <textarea rows="7" id="generatedEmail" tabindex="8" class="outtext" readonly=""></textarea><br>
                 <label for="sendAddress">Email Recipients:</label>
                 <input type="text" id="lname" name="lname"><br><br>
-                <input type="submit" value="Submit"><br>
             </form>
+            <button id="sub">Submit</button>
             <hr>
 
         </div>
